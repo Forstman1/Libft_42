@@ -1,4 +1,5 @@
 #ifndef libft_h
+#include <stddef.h>
 #define libft_h
 
 char* printthings(char *str);
