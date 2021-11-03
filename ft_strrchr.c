@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *ft_strchr(const char *str, int c)
+char *ft_strrchr(const char *str, int c)
 {
 	char *h;
 	char *o;
@@ -35,5 +35,5 @@ int main(void)
 {
 	char o[] = "hello people";
 	printf("%s\n", strrchr(o, 'p'));
-	printf("%s\n", ft_strchr(o, 'p'));
+	printf("%s\n", ft_strrchr(o, 'p'));
 }
