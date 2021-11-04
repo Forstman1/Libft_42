@@ -5,8 +5,8 @@
 
 size_t ft_strlcpy(char *dst, const char *src, size_t n)
 {
-    unsigned int	i;
-	unsigned int	len;
+    size_t	i;
+	size_t	len;
     char *a = (char*)src;
 
 	i = 0;
@@ -36,6 +36,6 @@ int main()
     char str2[] = "chill";
 
 
-    printf("%zu\n", ft_strlcpy(str1, str2, 0));
+    printf("%zu\n", ft_strlcpy(str1, str2, 5));
     printf("%s\n", str1);
 }
