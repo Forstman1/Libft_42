@@ -16,12 +16,13 @@ char *ft_strdup(const char *s1)
         i++;
     }
 
-    c = (char*)malloc(i*sizeof(char));
+    c = (char*)malloc((i + 1) * sizeof(char));
     i = 0;
     while (b[i])
     {
         c[i] = b[i];
         i++;
     }
+    c[i] = '\0';
     return (c);
 }

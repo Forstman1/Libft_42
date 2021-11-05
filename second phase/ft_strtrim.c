@@ -1,41 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sahafid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 08:51:12 by sahafid           #+#    #+#             */
-/*   Updated: 2021/11/05 08:51:15 by sahafid          ###   ########.fr       */
+/*   Created: 2021/11/05 08:50:17 by sahafid           #+#    #+#             */
+/*   Updated: 2021/11/05 10:45:41 by sahafid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-
 #include "libft.h"
 #include <stdio.h>
+#include <stflib.h>
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strtrim(char const *s1, char const *set)
 {
+    int i;
+    int o;
     char *a;
     char *b;
-    size_t i;
-    size_t o;
+    char *c;
 
     i = 0;
-    o = 0;
-    a = (char*)&s[start];
+    a = (char*)s1;
+    b = (char*)set;
 
-    while (a[start] && o < len)
-    {
+    while (a[i] == set)
+        i++;
+    while (a[o])
         o++;
-    }
-    b = (char*)malloc((o + 1) * sizeof(char));
-    while (a[i] && i <= len)
+    while (a[o - 1] == set)
+        o--;
+    c = (char*)malloc(((o - i) + 1) * sizeof(char));
+    while (i < o)
     {
-        b[i] = a[i];
+        *c = a[i];
         i++;
     }
-    b[i] = '\0';
-    return b;
+    *c = '\0';
+    return c;
+}
+int main()
+{ 
+    printf("%s", ft_strtrim(".  hello people  ..", ".."));
+    return 0;
 }

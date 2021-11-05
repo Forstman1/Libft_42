@@ -9,12 +9,13 @@ void *ft_calloc(size_t n, size_t size)
     size_t i;
 
     i = 0;
-    ptr = (int*)malloc(n*size);
+    ptr = (int*)malloc((n + 1)*size);
     while (i < n)
     {
         ptr[i] = 0;
         i++;
     }
+    ptr[i] = '\0';
     return (ptr);
 }
 int main(void)
