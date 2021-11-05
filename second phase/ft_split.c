@@ -13,12 +13,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 char **ft_split(char const *s, char c)
 {
     int i;
     size_t o;
-    int p;
     int t;
     int k;
     int j;
@@ -28,7 +28,6 @@ char **ft_split(char const *s, char c)
     a = (char*)s;
     i = 0;
     o = 0;
-    p = 0;
     t = 0;
     j = 0;
     k = 0;
@@ -46,6 +45,8 @@ char **ft_split(char const *s, char c)
     while ((o + 1) > 0)
     {
         k = 0;
+        while (a[i] == c)
+            i++;
         while (a[i] != c)
             i++;
         b[t] = malloc(sizeof(char) * (i + 1));
@@ -57,6 +58,7 @@ char **ft_split(char const *s, char c)
             k++;
             j++;
         }
+        b[t][k] = '\0';
         while (a[j] == c)
             j++;
         t++;
@@ -66,10 +68,9 @@ char **ft_split(char const *s, char c)
 }
 int main(void)
 {
-    char **str = ft_split("hello,people,chill", ',');
-    int i;
-    
-    i = 0;
-    printf("%s", str[2]);
+    char **str = ft_split("hello,people,chill,kill,stickkk,non", ',');
+
+    printf("%s", str[5]);
     free(str);
+
 }

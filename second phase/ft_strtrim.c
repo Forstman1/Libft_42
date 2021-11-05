@@ -11,39 +11,43 @@
 /* ************************************************************************** */
 
 
-#include "libft.h"
+//#include "libft.h"
 #include <stdio.h>
-#include <stflib.h>
+#include <stdlib.h>
 
 char *ft_strtrim(char const *s1, char const *set)
 {
     int i;
     int o;
+    int k;
     char *a;
     char *b;
     char *c;
 
     i = 0;
+    o = 0;
+    k = 0;
     a = (char*)s1;
     b = (char*)set;
 
-    while (a[i] == set)
+    while (a[i] == b)
         i++;
     while (a[o])
         o++;
-    while (a[o - 1] == set)
+    while (a[o - 1] == b)
         o--;
     c = (char*)malloc(((o - i) + 1) * sizeof(char));
     while (i < o)
     {
-        *c = a[i];
+        c[k] = a[i];
         i++;
+        k++;
     }
-    *c = '\0';
+    c[k] = '\0';
     return c;
 }
 int main()
 { 
-    printf("%s", ft_strtrim(".  hello people  ..", ".."));
+    printf("%s", ft_strtrim(".  hello people  l.", ".l"));
     return 0;
 }
