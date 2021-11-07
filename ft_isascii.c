@@ -6,14 +6,13 @@
 /*   By: sahafid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 08:51:51 by sahafid           #+#    #+#             */
-/*   Updated: 2021/11/05 08:51:54 by sahafid          ###   ########.fr       */
+/*   Updated: 2021/11/07 10:06:32 by sahafid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "lbft.h"
 
-int ft_isascii(int a)
+int	ft_isascii(int a)
 {
-    return (a >= 0 && a <= 127)
+	return (a >= 0 && a <= 127);
 }

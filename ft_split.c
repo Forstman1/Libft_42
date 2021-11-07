@@ -63,6 +63,8 @@ char **ft_split(char const *s, char c)
             j++;
         t++;
         o--;
+        while (a[i] != c)
+            i++;
     }
     return b;
 }

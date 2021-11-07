@@ -1,21 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sahafid <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/07 10:11:48 by sahafid           #+#    #+#             */
+/*   Updated: 2021/11/07 10:14:47 by sahafid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
 
-char *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	char *h;
-	int	i;
-	char a;
+	char	*h;
+	int		i;
+	char	a;
 
-	h = (char*)str;
+	h = (char *) str;
 	i = 0;
-	a = (char)c;
-
+	a = (char) c;
 	if (str[i] == 0)
-		return NULL;
-	
+		return (NULL);
 	while (h[i] != '\0')
 	{
 		if (a == h[i])
@@ -24,7 +33,7 @@ char *ft_strchr(const char *str, int c)
 	}
 	if (c == 0)
 		return (&h[i]);
-	return 0;
+	return (0);
 }
 int main(void)
 {

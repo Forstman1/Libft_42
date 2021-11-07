@@ -7,5 +7,7 @@ main.o: main.c
 
 ft_alpha.o: ft_isalpha.c libft.h
 	gcc -c ft_isalpha.c
+
+
 clean: 
 	rm *.o output

@@ -1,47 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sahafid <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/07 11:22:09 by sahafid           #+#    #+#             */
+/*   Updated: 2021/11/07 11:35:03 by sahafid          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
 
-size_t ft_strlcat(char *dst, const char *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-    size_t	i;
-    size_t len;
-    size_t o;
-    size_t m;
-    size_t l;
-    char *a = (char*)src;
+	size_t	i;
+	size_t	len;
+	size_t	o;
+	size_t	m;
+	size_t	l;
+	char	*a;
 
+	a = (char *)src;
 	i = 0;
-    len = 0;
-    m = 0;
-    o = 0;
-    while (dst[len])
-    {
-        len++;
-        m++;
-    }
-    while (a[o])
-    {
-        o++;
-    }
-    l = len;
-    if (len > n)
-        return (n + o);
-    
-    while (a[i] != 0 && m < (n - 1))
-    {
-        dst[len] = a[i];
-        i++;
-        len++;
-        m++;
-    }
-    dst[len] = '\0';
-
-    return (l + o);
-
+	o = 0;
+    len = strlen(dst);
+    m = len;
+	o = strlen(a);
+	l = len;
+	if (len > n)
+		return (n + o);
+	while (a[i] != 0 && m < (n - 1))
+	{
+		dst[len] = a[i];
+		i++;
+		len++;
+		m++;
+	}
+	dst[len] = '\0';
+	return (l + o);
 }
-int main()
+int main(void)
 {
     char dest1[30];
     char src1[10]= "AAAAAAAAA";
