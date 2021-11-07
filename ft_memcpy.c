@@ -31,11 +31,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	dst = a;
 	return (dst);
 }
-int main()
-{
-    char str[] = "start hello";
-
-    printf("%s\n", str);
-    ft_memcpy(str, &str[6], 4 * sizeof(char));
-    printf("%s\n", str);
-}
+//int main()
+//{
+//    char str[] = "start hello";
+//
+//    printf("%s\n", str);
+//    ft_memcpy(str, &str[6], 4 * sizeof(char));
+//    printf("%s\n", str);
+//}

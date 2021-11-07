@@ -29,10 +29,10 @@ void	*ft_memset(void *ptr, int i, size_t len)
 	ptr = c;
 	return (ptr);
 }
-int main(void)
-{
-    char o[] = "hello people";
-	//printf("%s\n", bzero(o, 'p'));
-	ft_memset(o, 'g', 5);
-    printf("%s", o);
-}
+//int main(void)
+//{
+//    char o[] = "hello people";
+//	//printf("%s\n", bzero(o, 'p'));
+//	ft_memset(o, 'g', 5);
+//    printf("%s", o);
+//}

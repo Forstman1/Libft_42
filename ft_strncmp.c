@@ -25,11 +25,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-int main(void)
-{
-    char *a = "hello ";
-    char *b = "hello humains";
-    printf("%d\n", ft_strncmp(a, b, 10));
-    printf("%d\n", strncmp(a, b, 10));
-
-}
+//int main(void)
+//{
+//    char *a = "hello ";
+//    char *b = "hello humains";
+//    printf("%d\n", ft_strncmp(a, b, 10));
+//    printf("%d\n", strncmp(a, b, 10));
+//
+//}

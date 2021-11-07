@@ -28,17 +28,17 @@ void	ft_bzero(void *s, size_t n)
 	}
 	s = c;
 }
-int main()
-{     
-    int i = 0;     
-    char str1[12] = "Hello World!";     
-    char str2[12] = "Hello World!";     
-    bzero(str1, 1);     
-    ft_bzero(str2, 1);     
-    while (i < 12)     
-    {          
-        printf("%c\t\t%c\n", str1[i], str2[i]);         
-        i++;       
-    }     
-    return 0; 
-}
+//int main()
+//{     
+//    int i = 0;     
+//    char str1[12] = "Hello World!";     
+//    char str2[12] = "Hello World!";     
+//    bzero(str1, 1);     
+//    ft_bzero(str2, 1);     
+//    while (i < 12)     
+//    {          
+//        printf("%c\t\t%c\n", str1[i], str2[i]);         
+//        i++;       
+//    }     
+//    return 0; 
+//}

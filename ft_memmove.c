@@ -52,9 +52,9 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	free (c);
 	return (dst);
 }
-int main()
-{
-    //char str1[] = "haw are mr amine";
-    char str1[] = "start hellosfsfs";
-    printf("%s", ft_memmove(str1 + 8, str1 + 3, 8));
-}
+//int main()
+//{
+//    //char str1[] = "haw are mr amine";
+//    char str1[] = "start hellosfsfs";
+//    printf("%s", ft_memmove(str1 + 8, str1 + 3, 8));
+//}

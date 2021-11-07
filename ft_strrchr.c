@@ -37,9 +37,9 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (NULL);
 }
-int main(void)
-{
-	char o[] = "hello people";
-	printf("%s\n", strrchr(o, 'p'));
-	printf("%s\n", ft_strrchr(o, 'p'));
-}
+//int main(void)
+//{
+//	char o[] = "hello people";
+//	printf("%s\n", strrchr(o, 'p'));
+//	printf("%s\n", ft_strrchr(o, 'p'));
+//}

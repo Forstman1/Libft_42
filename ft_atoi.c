@@ -37,8 +37,8 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-int main(void)
-{
-    char str1[] = "-1234";
-    printf("%d\n", ft_atoi(str1));
-}
+//int main(void)
+//{
+//    char str1[] = "-1234";
+//    printf("%d\n", ft_atoi(str1));
+//}

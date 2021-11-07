@@ -29,9 +29,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-int main(void)
-{
-    char *a = "hello people";
-
-    printf("%s\n", ft_memchr(a, 'e', 10));
-}
+//int main(void)
+//{
+//    char *a = "hello people";
+//
+//    printf("%s\n", ft_memchr(a, 'e', 10));
+//}

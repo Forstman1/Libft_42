@@ -30,9 +30,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	return ((unsigned char)a[i] - (unsigned char)b[i]);
 }
-int main(void)
-{
-    char arr1[] = "heelo";
-    char arr2[] = "heeyo";
-    printf("%d", memcmp(arr1, arr2, 2));
-}
+//int main(void)
+//{
+//    char arr1[] = "heelo";
+//    char arr2[] = "heeyo";
+//    printf("%d", memcmp(arr1, arr2, 2));
+//}
