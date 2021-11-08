@@ -37,8 +37,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 		len++;
 	}
 	dst[len] = '\0';
-//	return (l + o);
-//}
+	return (l + o);
+}
 //int main(void)
 //{
 //    char dest1[30];

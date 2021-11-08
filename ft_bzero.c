@@ -17,27 +17,27 @@
 void	ft_bzero(void *s, size_t n)
 {
 	char	*c;
-	int		a;
+	size_t	i;
 
-	a = 0;
+	i = 0;
 	c = s;
-	while (a++ < n && *c)
+	while (i < n)
 	{
-		*c = 0;
-		c++;
+		c[i] = 0;
+		i++;
 	}
 	s = c;
 }
 //int main()
 //{     
 //    int i = 0;     
-//    char str1[12] = "Hello World!";     
-//    char str2[12] = "Hello World!";     
-//    bzero(str1, 1);     
-//    ft_bzero(str2, 1);     
+//    char str1[100] = "\0ello World!";     
+//    char str2[100] = "\0ello World!";     
+//    bzero(str1, 42);     
+//    ft_bzero(str2, 42);     
 //    while (i < 12)     
 //    {          
-//        printf("%c\t\t%c\n", str1[i], str2[i]);         
+//        printf("%x\t\t%x\n", str1[i], str2[i]);         
 //        i++;       
 //    }     
 //    return 0; 

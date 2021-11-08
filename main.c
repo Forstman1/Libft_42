@@ -14,4 +14,5 @@ int	main(void)
     printf("%s\n", ft_strtrim("123", ""));
     printf("%s\n", ft_strtrim("", ""));
     printf("%s\n", ft_strtrim("abcdba", "acb"));
+    return (0);
 }

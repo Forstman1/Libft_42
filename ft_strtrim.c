@@ -18,7 +18,6 @@
 int	depart(int i, char *b, char *a)
 {
 	int	o;
-	int	k;
 
 	o = 0;
 	while (a[i])
@@ -67,7 +66,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	b = (char *)set;
 	i = depart(i, b, a);
 	j = ft_strlen(a);
-	while (j-- > 0)
+	while (j > 0)
 	{
 		o = 0;
 		while (set[o++])
@@ -75,21 +74,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 				break ;
 		if (set[o] != a[j])
 			break ;
+		j--;
 	}
 	return (newarray(i, j, a));
 }
 
-//int	main(void)
-//{
-//    printf("%s\n", ft_strtrim("   xxxtripouille", " x"));
-//    free(ft_strtrim("   xxxtripouille", " x"));
-//    printf("%s\n", ft_strtrim("tripouille   xxx", " x"));
-//    free(ft_strtrim("   xxxtripouille", " x"));
-//    printf("%s\n", ft_strtrim("   xxxtripouille   xxx", " x"));
-//    free(ft_strtrim("   xxxtripouille", " x"));
-//    printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
-//    printf("%s\n", ft_strtrim("", "123"));
-//    printf("%s\n", ft_strtrim("123", ""));
-//    printf("%s\n", ft_strtrim("", ""));
-//    printf("%s\n", ft_strtrim("abcdba", "acb"));
-//}
+// int	main(void)
+// {
+//     printf("%s\n", ft_strtrim("   xxxtripouille", " x"));
+//     free(ft_strtrim("   xxxtripouille", " x"));
+//     printf("%s\n", ft_strtrim("tripouille   xxx", " x"));
+//     free(ft_strtrim("   xxxtripouille", " x"));
+//     printf("%s\n", ft_strtrim("   xxxtripouille   xxx", " x"));
+//     free(ft_strtrim("   xxxtripouille", " x"));
+//     printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
+//     printf("%s\n", ft_strtrim("", "123"));
+//     printf("%s\n", ft_strtrim("123", ""));
+//     printf("%s\n", ft_strtrim("", ""));
+//     printf("%s\n", ft_strtrim("abcdba", "acb"));
+// }
