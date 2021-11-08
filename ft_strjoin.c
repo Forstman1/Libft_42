@@ -27,12 +27,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	c = (char *)malloc((strlen(a) + strlen(b) + 1) * 1);
 	strcpy(c, a);
 	strcat(c, b);
-	*c = '\0';
+	//*c = '\0';
 	return (c);
 }
 //int main(void)
 //{
-//    char a[] = "hello";
-//    char b[] = "people";
-//    printf("%s", ft_strjoin(a, b));
+//    //char a[] = "hello";
+//    //char b[] = "people";
+//    printf("%s", ft_strjoin("tripouille", "42"));
+//	free(ft_strjoin("tripouille", "42"));
 //}

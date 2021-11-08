@@ -42,14 +42,14 @@ char	*newarray(int i, int j, char *a)
 	char	*c;
 
 	o = 0;
-	c = (char *)malloc((i + j + 1) * sizeof(char));
+	c = (char *)malloc((j - i + 1) * sizeof(char));
 	while (i <= j)
 	{
 		c[o] = a[i];
 		o++;
 		i++;
 	}
-	c[o] = '\0';
+	c[o + 1] = '\0';
 	return (c);
 }
 
@@ -65,23 +65,36 @@ char	*ft_strtrim(char const *s1, char const *set)
 	a = (char *)s1;
 	b = (char *)set;
 	i = depart(i, b, a);
-	j = ft_strlen(a);
+	j = strlen(a);
+	if (i == j)
+	{
+		nullcase()
+	}
 	while (j > 0)
 	{
 		o = 0;
-		while (set[o++])
+		while (set[o])
+		{
 			if (set[o] == a[j])
 				break ;
+			o++;
+		}
 		if (set[o] != a[j])
 			break ;
 		j--;
 	}
+
 	return (newarray(i, j, a));
 }
 
-// int	main(void)
-// {
-//     printf("%s\n", ft_strtrim("   xxxtripouille", " x"));
+ int main(void)
+ {
+	 char * s = ft_strtrim("   xxxtripouille", " x");
+	 s = ft_strtrim("   xxx   xxx", " x");
+     printf("%s\n", s);
+	 printf("%d", strcmp(s, ""));
+	 free(s);
+
 //     free(ft_strtrim("   xxxtripouille", " x"));
 //     printf("%s\n", ft_strtrim("tripouille   xxx", " x"));
 //     free(ft_strtrim("   xxxtripouille", " x"));
@@ -92,4 +105,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 //     printf("%s\n", ft_strtrim("123", ""));
 //     printf("%s\n", ft_strtrim("", ""));
 //     printf("%s\n", ft_strtrim("abcdba", "acb"));
-// }
+ } 

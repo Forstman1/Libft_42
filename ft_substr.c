@@ -57,7 +57,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	a = (char *)s;
 
-	while (a[start] && o < len)
+	while (a[o] && o < len)
 		o++;
 	b = (char *)malloc(o * sizeof(char));
 	if(!b)
