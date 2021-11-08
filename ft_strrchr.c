@@ -17,28 +17,28 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	char	*h;
-	int		i;
 	int		j;
 
 	h = (char *)str;
-	i = 0;
 	j = 0;
-	if (str[i] == 0)
+	if (str[0] == 0)
 		return (NULL);
 	while (h[j])
 		j++;
-	while (h[i] != '\0')
+	while (j >= 0)
 	{
-		if (c == h[j])
+		if (h[j] == (unsigned char) c)
+		{
+			h[j] = (char) c;
 			return (&h[j]);
-		i++;
+		}
 		j--;
 	}
 	return (NULL);
 }
 //int main(void)
 //{
-//	char o[] = "hello people";
-//	printf("%s\n", strrchr(o, 'p'));
-//	printf("%s\n", ft_strrchr(o, 'p'));
+//	char o[] = "tripouille";
+//	printf("%s\n", ft_strrchr(o, 't'));
+//	//printf("%s\n", ft_strrchr(o, 't'));
 //}

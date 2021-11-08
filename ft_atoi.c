@@ -14,6 +14,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int ft_isspace(const char *a)
+{
+	return (*a == '\t' || *a == '\n' || *a == '\v' 
+		|| *a == '\f' || *a == '\r'|| *a == ' ');
+}
+
 int	ft_atoi(const char *str)
 {
 	char	*a;
@@ -21,24 +27,27 @@ int	ft_atoi(const char *str)
 	int		res;
 	int		sign;
 
+	a = (char *)str;
 	i = 0;
 	res = 0;
-	a = (char *)str;
 	sign = 1;
-	if (a[0] == '-')
-		sign = -1;
-	if (a[1] == '-' || a[1] == '+')
-		return (0);
-	i = 1;
-	while (a[i])
+	while (ft_isspace(&a[i]))
+		i++;
+	if (a[i] == '-')
 	{
-		res = res * 10 + str[i] - '0';
+		sign = -1;
 		i++;
 	}
+	else if (a[i] == '+')
+		i++;
+	while (a[i] >= '0' && a[i] <= '9')
+		res = res * 10 + a[i++] - '0';
 	return (res * sign);
 }
-//int main(void)
-//{
-//    char str1[] = "-1234";
-//    printf("%d\n", ft_atoi(str1));
-//}
+/*
+int main(void)
+{
+    char escape[] = "2147483648";
+	
+    printf("%d\n", ft_atoi(escape));
+}*/

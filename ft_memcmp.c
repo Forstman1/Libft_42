@@ -26,13 +26,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	if (n == 0)
 		return (0);
-	while ((a[i] == b[i]) && a[i] != '\0' && b[i] != '\0' && i < n - 1)
+	while ((a[i] == b[i]) && i < n - 1)
 		i++;
 	return (a[i] - b[i]);
 }
-int main(void)
-{
-	char s2[] = {0, 0, 127, 0};
-	char s3[] = {0, 0, 42, 0};
-    printf("%d", memcmp(s2, s3, 4));
-}
+//int main(void)
+//{
+//	char s2[] = {0, 0, 127, 0};
+//	char s3[] = {0, 0, 42, 0};
+//    printf("%d", ft_memcmp(s2, s3, 4));
+//}

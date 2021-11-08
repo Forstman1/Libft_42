@@ -12,6 +12,27 @@
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
+
+char *nullcase(char *a, size_t len)
+{
+	char	*b;
+	size_t	i;
+	size_t	o;
+
+	i = 0;
+	o = 0;	
+	while (o < len)
+		o++;
+	b = (char *)malloc(o * sizeof(char));
+	while (i < len)
+	{
+		b[i] = a[i];
+		i++;
+	}
+	b[i] = '\0';
+	return (b);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -22,15 +43,39 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	o = 0;
-	a = (char *)&s[start];
+	b = NULL;
+	if (start > len)
+	{
+		b = (void *)malloc(sizeof(char));
+		b[0] = '\0';
+		return (b);
+	}
+	if (*s == 0)
+	{
+		a = (char *)s;
+		return (nullcase(a, len));
+	}
+	a = (char *)s;
+
 	while (a[start] && o < len)
 		o++;
-	b = (char *)malloc((o + 1) * sizeof(char));
-	while (a[i] && i <= len)
+	b = (char *)malloc(o * sizeof(char));
+	if(!b)
+		return (0);
+	while (a[start] && i < len)
 	{
-		b[i] = a[i];
+		b[i] = a[start];
 		i++;
+		start++;
 	}
 	b[i] = '\0';
 	return (b);
 }
+//int main(void)
+//{
+//	char *s = ft_substr("", 1, 100);
+//	//s = ft_substr("tripouille", 100, 1);
+//	printf("%s", s);
+//	//printf("%d", strcmp(s, ""));
+//	free(s);
+//}

@@ -25,11 +25,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	a = (char *)src;
 	i = 0;
 	o = 0;
-	len = strlen(dst);
-	o = strlen(a);
+	len = ft_strlen(dst);
+	o = ft_strlen(a);
 	l = len;
 	if (len > n)
 		return (n + o);
+	if (len == 0 && n == 0)
+		return (l + o);
 	while (a[i] != 0 && len < (n - 1))
 	{
 		dst[len] = a[i];
@@ -41,10 +43,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 }
 //int main(void)
 //{
+//	char dest[30]; memset(dest, 0, 30);
 //    char dest1[30];
 //    char src1[10]= "AAAAAAAAA";
 //    dest1[0] = 'B';
-//    printf("\n00.\tft_strlcat:\t%zu\n", ft_strlcat(dest1, src1, 0));
+ //   printf("\n00.\tft_strlcat:\t%zu\n", ft_strlcat(dest, "123", 0));
+//	printf("%s", dest);
 //    printf("01.\tft_strlcat:\t%zu\n", ft_strlcat(dest1, src1, 1));
 //    printf("02.\tft_strlcat:\t%zu\n", ft_strlcat(dest1, src1, 3));
 //    printf("03.\tft_strlcat:\t%zu\n", ft_strlcat(dest1, src1, 6));
