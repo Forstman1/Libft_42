@@ -17,24 +17,23 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	char	*h;
+	char	a;
 	int		j;
 
 	h = (char *)str;
 	j = 0;
-	if (str[0] == 0)
-		return (NULL);
+	a = (char) c;
+	//if (str[0] == 0)
+		//return (NULL);
 	while (h[j])
 		j++;
 	while (j >= 0)
 	{
-		if (h[j] == (unsigned char) c)
-		{
-			h[j] = (char) c;
+		if (h[j] == a)
 			return (&h[j]);
-		}
 		j--;
 	}
-	return (NULL);
+	return (0);
 }
 //int main(void)
 //{

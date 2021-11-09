@@ -36,7 +36,10 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	{
 		i++;
 		if (i > n)
+		{
+			free (c);	
 			return (a);
+		}
 	}
 	i = 0;
 	if (a < b)
@@ -56,5 +59,5 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 //{
 //    //char str1[] = "haw are mr amine";
 //    char str1[] = "start hellosfsfs";
-//    printf("%s", ft_memmove(str1 + 8, str1 + 3, 8));
+//    printf("%s", ft_memmove(str1, str1, 0));
 //}

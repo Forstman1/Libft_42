@@ -15,6 +15,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+char *nullcase(void)
+{
+	char *c;
+
+	c = (char *)malloc(1 * sizeof(char));
+	c[0] = '\0';
+	return (c);
+}
+
 int	depart(int i, char *b, char *a)
 {
 	int	o;
@@ -42,14 +51,15 @@ char	*newarray(int i, int j, char *a)
 	char	*c;
 
 	o = 0;
-	c = (char *)malloc((j - i + 1) * sizeof(char));
+	c = NULL;
+	c = (char *)malloc((j - i + 2) * sizeof(char));
 	while (i <= j)
 	{
 		c[o] = a[i];
 		o++;
 		i++;
 	}
-	c[o + 1] = '\0';
+	c[o] = '\0';
 	return (c);
 }
 
@@ -62,14 +72,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*b;
 
 	i = 0;
+	j = 0;
 	a = (char *)s1;
 	b = (char *)set;
 	i = depart(i, b, a);
 	j = strlen(a);
-	if (i == j)
-	{
-		nullcase()
-	}
+	
 	while (j > 0)
 	{
 		o = 0;
@@ -83,17 +91,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 			break ;
 		j--;
 	}
-
+	if (i > j)
+	{
+		return(nullcase());
+	}
 	return (newarray(i, j, a));
 }
 
- int main(void)
- {
-	 char * s = ft_strtrim("   xxxtripouille", " x");
-	 s = ft_strtrim("   xxx   xxx", " x");
-     printf("%s\n", s);
-	 printf("%d", strcmp(s, ""));
-	 free(s);
+ //int main(void)
+ //{
+
+	 
+  //   printf("%s\n", ft_strtrim("hello everyone !", ""));
+//	 printf("%d", strcmp(s, ""));
+	// free(ft_strtrim("hello everyone !", ""));
 
 //     free(ft_strtrim("   xxxtripouille", " x"));
 //     printf("%s\n", ft_strtrim("tripouille   xxx", " x"));
@@ -105,4 +116,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 //     printf("%s\n", ft_strtrim("123", ""));
 //     printf("%s\n", ft_strtrim("", ""));
 //     printf("%s\n", ft_strtrim("abcdba", "acb"));
- } 
+ //} 

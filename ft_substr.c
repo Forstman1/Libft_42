@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *nullcase(char *a, size_t len)
+char *nullcase(void)
 {
 	char	*b;
 	size_t	i;
@@ -22,15 +22,9 @@ char *nullcase(char *a, size_t len)
 
 	i = 0;
 	o = 0;	
-	while (o < len)
-		o++;
-	b = (char *)malloc(o * sizeof(char));
-	while (i < len)
-	{
-		b[i] = a[i];
-		i++;
-	}
-	b[i] = '\0';
+	
+	b = (char *)malloc(1 * sizeof(char));
+	b[0] = '\0';
 	return (b);
 }
 
@@ -53,7 +47,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (*s == 0)
 	{
 		a = (char *)s;
-		return (nullcase(a, len));
+		return (nullcase());
 	}
 	a = (char *)s;
 
@@ -73,9 +67,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 //int main(void)
 //{
-//	char *s = ft_substr("", 1, 100);
 //	//s = ft_substr("tripouille", 100, 1);
-//	printf("%s", s);
+//	printf("%s", ft_substr("", 1, 100));
 //	//printf("%d", strcmp(s, ""));
-//	free(s);
+//	free(ft_substr("", 1, 100));
 //}
