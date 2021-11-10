@@ -15,16 +15,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *nullcase(void)
+static char *nullcase(void)
 {
 	char *c;
 
-	c = (char *)malloc(1 * sizeof(char));
+	c = (char *)malloc(sizeof(char));
 	c[0] = '\0';
 	return (c);
 }
 
-int	depart(int i, char *b, char *a)
+static int	depart(int i, char *b, char *a)
 {
 	int	o;
 
@@ -45,7 +45,7 @@ int	depart(int i, char *b, char *a)
 	return (i);
 }
 
-char	*newarray(int i, int j, char *a)
+static char	*newarray(int i, int j, char *a)
 {
 	int		o;
 	char	*c;

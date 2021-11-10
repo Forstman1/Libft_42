@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *nullcase(void)
+static char *nullcase(void)
 {
 	char	*b;
 	size_t	i;
@@ -23,7 +23,7 @@ char *nullcase(void)
 	i = 0;
 	o = 0;	
 	
-	b = (char *)malloc(1 * sizeof(char));
+	b = (char *)malloc(sizeof(char));
 	b[0] = '\0';
 	return (b);
 }
@@ -34,13 +34,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*b;
 	size_t	i;
 	size_t	o;
+	unsigned	l;
 
 	i = 0;
 	o = 0;
 	b = NULL;
-	if (start > len)
+	a = (char *)s;
+	l = 0;
+
+	l = strlen(a);
+	if (start > l)
 	{
-		b = (void *)malloc(sizeof(char));
+		b = (char *)malloc(sizeof(char));
 		b[0] = '\0';
 		return (b);
 	}
@@ -49,13 +54,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		a = (char *)s;
 		return (nullcase());
 	}
-	a = (char *)s;
-
+	
 	while (a[o] && o < len)
 		o++;
 	b = (char *)malloc(o * sizeof(char));
 	if(!b)
-		return (0);
+	{
+		b = NULL;
+		return (b);
+	}
 	while (a[start] && i < len)
 	{
 		b[i] = a[start];
