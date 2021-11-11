@@ -11,3 +11,26 @@
 /* ************************************************************************** */
 
 
+char *ft_itoa(int n)
+{
+
+	char	*a;
+	int		i;
+	int		res;
+	int		sign;
+
+	a = (char *)str;
+	i = 0;
+	res = n;
+
+
+
+	while (a[i] >= 0 && a[i] <= 9)
+    {
+		res = res % 10;
+        
+        i++;
+    }
+	return (res * sign);
+
+}
