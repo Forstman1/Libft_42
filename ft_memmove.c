@@ -17,47 +17,29 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t	i;
 	char	*a;
 	char	*b;
-	char	*c;
 
 	a = (char *)dst;
 	b = (char *)src;
-	c = (char *)malloc(sizeof(char) * (n + 1));
-	i = 0;
-	while (i < n)
-	{
-		c[i] = b[i];
-		i++;
-	}
-	i = 0;
-	while (a[i] == b[i])
-	{
-		i++;
-		if (i > n)
-		{
-			free (c);	
-			return (a);
-		}
-	}
-	i = 0;
+	if (a == b)
+		return (b);
 	if (a < b)
-		memcpy(a, b, n);
-	else if (a > b)
+		return(memcpy(a, b, n));
+	else
 	{
-		while (i < n)
+		n -= 1;
+		while (0 < n + 1)
 		{
-			a[i] = c[i];
-			i++;
+			a[n] = b[n];
+			n--;
 		}
 	}
-	free (c);
 	return (dst);
 }
 //int main()
 //{
 //    //char str1[] = "haw are mr amine";
-//    char str1[] = "start hellosfsfs";
-//    printf("%s", ft_memmove(str1, str1, 0));
+//    char str1[] = "start hello";
+//    printf("%s", ft_memmove(str1 + 5, str1, 6));
 //}
