@@ -36,6 +36,10 @@ $(NAME) : $(OBJECTS) libft.h
 all: $(NAME)
 
 # target to compile all .c files,
+bonus: $(OBJECTS) libft.h
+	ar rcs $(NAME) $(OBJECTS)
+
+
 %.o : %.c $(SOURCES)
 	$(CC) $(FLAGS) -c $<
 
