@@ -24,6 +24,8 @@ static char *nullcase(void)
 	o = 0;	
 	
 	b = (char *)malloc(sizeof(char));
+	if (!b)
+		return NULL;
 	b[0] = '\0';
 	return (b);
 }
@@ -34,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*b;
 	size_t	i;
 	size_t	o;
-	unsigned	l;
+	unsigned int	l;
 
 	i = 0;
 	o = 0;
@@ -46,6 +48,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > l)
 	{
 		b = (char *)malloc(sizeof(char));
+		if (!b)
+			return NULL;
 		b[0] = '\0';
 		return (b);
 	}
@@ -54,15 +58,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		a = (char *)s;
 		return (nullcase());
 	}
-	
 	while (a[o] && o < len)
 		o++;
-	b = (char *)malloc(o * sizeof(char));
+	b = (char *)malloc(o + 1 * sizeof(char));
 	if(!b)
-	{
-		b = NULL;
-		return (b);
-	}
+		return (NULL);
 	while (a[start] && i < len)
 	{
 		b[i] = a[start];

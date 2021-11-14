@@ -54,6 +54,8 @@ static char **nullcase(char *a)
     char **b;
     
     b = (char**)malloc(sizeof(char*) * 1);
+    if (!b)
+        return NULL;
     b[0] = NULL; 
     if (a[0] != 0)
         b[0] = strdup(a);
@@ -73,16 +75,24 @@ char **ft_split(const char *s, char c)
     if (c == 0)
         return (nullcase(a));
     a = ft_strtrim(s, &c);
+    if (!(a))
+        return NULL;
     o = numdelim(a, c);
     if (a[0] == 0)
     {
         b = (char**)malloc(sizeof(char*));
+        if (!b)
+            return NULL;
         b[0] = NULL;
         free(a);
         return b;
     }
     b = (char**)malloc(sizeof(char*) * (++o + 1));
+    if (!b)
+        return NULL;
     b[o - 1] = NULL;
     cpypast(o, a, b, c); 
+    if (!b)
+        return NULL;
     return (b);
 }

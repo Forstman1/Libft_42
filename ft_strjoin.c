@@ -24,7 +24,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	a = (char *)s1;
 	b = (char *)s2;
+	if (!(s1) || !(s2))
+		return NULL;
 	c = (char *)malloc((strlen(a) + strlen(b) + 1) * 1);
+	if (!c)
+		return NULL;
 	strcpy(c, a);
 	strcat(c, b);
 	//*c = '\0';

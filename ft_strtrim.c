@@ -20,6 +20,8 @@ static char *nullcase(void)
 	char *c;
 
 	c = (char *)malloc(sizeof(char));
+	if (!c)
+		return NULL;
 	c[0] = '\0';
 	return (c);
 }
@@ -53,6 +55,8 @@ static char	*newarray(int i, int j, char *a)
 	o = 0;
 	c = NULL;
 	c = (char *)malloc((j - i + 2) * sizeof(char));
+	if (!c)
+		return NULL;
 	while (i <= j)
 	{
 		c[o] = a[i];
@@ -76,8 +80,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	a = (char *)s1;
 	b = (char *)set;
 	i = depart(i, b, a);
-	j = strlen(a);
+	j = ft_strlen(a);
 	
+	if (!(s1) || !(set))
+		return NULL;
 	while (j > 0)
 	{
 		o = 0;
@@ -92,28 +98,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j--;
 	}
 	if (i > j)
-	{
 		return(nullcase());
-	}
 	return (newarray(i, j, a));
 }
-
- //int main(void)
- //{
-
-	 
-  //   printf("%s\n", ft_strtrim("hello everyone !", ""));
-//	 printf("%d", strcmp(s, ""));
-	// free(ft_strtrim("hello everyone !", ""));
-
-//     free(ft_strtrim("   xxxtripouille", " x"));
-//     printf("%s\n", ft_strtrim("tripouille   xxx", " x"));
-//     free(ft_strtrim("   xxxtripouille", " x"));
-//     printf("%s\n", ft_strtrim("   xxxtripouille   xxx", " x"));
-//     free(ft_strtrim("   xxxtripouille", " x"));
-//     printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
-//     printf("%s\n", ft_strtrim("", "123"));
-//     printf("%s\n", ft_strtrim("123", ""));
-//     printf("%s\n", ft_strtrim("", ""));
-//     printf("%s\n", ft_strtrim("abcdba", "acb"));
- //} 
