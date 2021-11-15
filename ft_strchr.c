@@ -17,13 +17,12 @@
 char	*ft_strchr(const char *str, int c)
 {
 	char	*h;
-	int		i;
 	char	a;
+	int		i;
 
-	h = (char *) str;
+	h = (char *)str;
 	i = 0;
-	a = (char) c;
-
+	a = (char)c;
 	while (h[i] != '\0')
 	{
 		if (a == h[i])
@@ -34,18 +33,3 @@ char	*ft_strchr(const char *str, int c)
 		return (&h[i]);
 	return (0);
 }
-//int main(void)
-//{
-//    char s[] = "hello";
-//     printf("%s\n", strchr(s, 0));
-//	 //printf("%s\n", ft_strchr(s, 0));
-//     //printf("%s\n", strchr(s, 'l'));
-//	 //printf("%s\n", ft_strchr(s, 'l'));
-//     //printf("%s\n", strchr(s, 'z'));
-//	 //printf("%s\n", ft_strchr(s, 'z'));
-//     //printf("%s\n", strchr(s, 0));
-//	 //printf("%s\n", ft_strchr(s, 0));
-//     //printf("%s\n", strchr(s, 'e' + 256));
-//	 //printf("%s\n", ft_strchr(s, 'e' + 256));
-//    return (0);
-//}

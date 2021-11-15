@@ -25,19 +25,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	a = (char *)s1;
 	b = (char *)s2;
 	if (!(s1) || !(s2))
-		return NULL;
+		return (NULL);
 	c = (char *)malloc((strlen(a) + strlen(b) + 1) * 1);
 	if (!c)
-		return NULL;
-	strcpy(c, a);
-	strcat(c, b);
-	//*c = '\0';
+		return (NULL);
+	ft_strcpy(c, a);
+	ft_strcat(c, b);
 	return (c);
 }
-//int main(void)
-//{
-//    //char a[] = "hello";
-//    //char b[] = "people";
-//    printf("%s", ft_strjoin("tripouille", "42"));
-//	free(ft_strjoin("tripouille", "42"));
-//}

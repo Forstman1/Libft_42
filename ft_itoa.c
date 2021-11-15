@@ -13,81 +13,109 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *ft_itoa(int n)
+static char	*convertingnegat(long int y, char *a, long int o)
 {
+	long int	res;
+	long int	store;
 
-    char    *a;
-    long int      i;
-    long int     res;
-    long int     y;
-    long int    store;
-    long int    l;
-    long int    o;
+	store = 0;
+	res = o;
+	while (y > 0)
+	{
+		store = res % 10;
+		a[y] = store + '0';
+		store = 0;
+		res = o / 10;
+		o = res;
+		y--;
+	}
+	return (a);
+}
 
-    y = 0;
-    i = 0;
-    res = n;
-    store = 0;
-    o = (long int)n;
+static char	*convertingpos(long int y, char *a, int n)
+{
+	long int	res;
+	long int	store;
+
+	store = 0;
+	res = n;
+	while (y > 0)
+	{
+		store = res % 10;
+		a[y - 1] = store + '0';
+		store = 0;
+		res = n / 10;
+		n = res;
+		y--;
+	}
+	return (a);
+}
+
+static char	*negatifcase(int n, long int y)
+{
+	char		*a;
+	long int	res;
+	long int	o;
+	long int	l;
+
+	res = n;
+	o = (long int)n;
+	while (o != '\0')
+	{
+		o = o / 10;
+		y++;
+	}
+	l = y;
+	a = (char *)malloc((y + 2) * sizeof(char));
+	if (!a)
+		return (0);
+	a[0] = '-';
+	res = res * -1;
+	o = res;
+	a = convertingnegat(y, a, o);
+	a[l + 1] = '\0';
+	return (a);
+}
+
+static char	*positifcase(int n, long int y)
+{
+	long int	res;
+	long int	l;
+	char		*a;
+
+	res = n;
+	while (n != '\0')
+	{
+		n = n / 10;
+		y++;
+	}
+	l = y;
+	a = (char *)malloc((y + 1) * sizeof(char));
+	if (!a)
+		return (0);
+	n = res;
+	a = convertingpos(y, a, n);
+	a[l] = '\0';
+	return (a);
+}
+
+char	*ft_itoa(int n)
+{
+	char		*a;
+	long int	y;
+
+	y = 0;
 	if (n == 0)
 	{
-		a = (char*)malloc(2 * sizeof(char));
-        if (!a)
-            return 0;
+		a = (char *)malloc(2 * sizeof(char));
+		if (!a)
+			return (0);
 		a[0] = '0';
 		a[1] = '\0';
-		return a;
+		return (a);
 	}
 	if (n > 0)
-	{
-    	while (n != '\0')
-    	{
-    	    n = n / 10;
-    	    y++;
-    	}
-    	l = y;
-    	a = (char*)malloc((y + 1) * sizeof(char));
-        if (!a)
-            return 0;
-    	n = res;
-    	while (y > 0)
-    	{    
-    	    store = res % 10;
-    	      a[y - 1] = store + '0';    
-    	      store = 0;    
-    	      res = n / 10;
-    	      n = res;
-    	      i++;
-    	    y--;
-    	}
-		a[l] = '\0';
-    	return (a);
-	}
+		return (positifcase(n, y));
 	else
-	{
-		while (o != '\0')
-    	{
-    	    o = o / 10;
-    	    y++;
-    	}
-    	l = y;
-    	a = (char*)malloc((y + 2) * sizeof(char));
-        if (!a)
-            return 0;
-		a[0] = '-';
-		res = res * -1;
-    	o = res;
-    	while (y > 0)
-    	{    
-    	    store = res % 10;
-    	      a[y] = store + '0';    
-    	      store = 0;    
-    	      res = o / 10;
-    	      o = res;
-    	      i++;
-    	    y--;
-    	}
-		a[l + 1] = '\0';
-    	return (a);
-	}
+		return (negatifcase(n, y));
 }

@@ -6,7 +6,7 @@
 /*   By: sahafid <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 10:15:39 by sahafid           #+#    #+#             */
-/*   Updated: 2021/11/07 10:17:40 by sahafid          ###   ########.fr       */
+/*   Updated: 2021/11/14 17:39:39 by sahafid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ char	*ft_strrchr(const char *str, int c)
 	h = (char *)str;
 	j = 0;
 	a = (char) c;
-	//if (str[0] == 0)
-		//return (NULL);
 	while (h[j])
 		j++;
 	while (j >= 0)
@@ -35,9 +33,3 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (0);
 }
-//int main(void)
-//{
-//	char o[] = "tripouille";
-//	printf("%s\n", ft_strrchr(o, 't'));
-//	//printf("%s\n", ft_strrchr(o, 't'));
-//}

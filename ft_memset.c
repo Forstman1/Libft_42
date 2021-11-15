@@ -20,18 +20,11 @@ void	*ft_memset(void *ptr, int i, size_t len)
 	size_t	a;
 
 	a = 0;
-	c = (char*)ptr;
+	c = (char *)ptr;
 	while (a < len)
 	{
-		c[a] = (unsigned char) i;
+		c[a] = (unsigned char)i;
 		a++;
 	}
 	return (ptr);
 }
-//int main(void)
-//{
-//    char o[100];
-//	//printf("%s\n", memset(o, 'g', 10));
-//	
-//    printf("%s", ft_memset(o, 'A', 42));
-//}

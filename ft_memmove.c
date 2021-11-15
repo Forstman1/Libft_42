@@ -20,12 +20,12 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	char	*a;
 	char	*b;
 
-	a = (char *)dst;
-	b = (char *)src;
+	a = (char *) dst;
+	b = (char *) src;
 	if (a == b)
 		return (b);
 	if (a < b)
-		return(memcpy(a, b, n));
+		return (ft_memcpy(a, b, n));
 	else
 	{
 		n -= 1;
@@ -37,9 +37,3 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-//int main()
-//{
-//    //char str1[] = "haw are mr amine";
-//    char str1[] = "start hello";
-//    printf("%s", ft_memmove(str1 + 5, str1, 6));
-//}

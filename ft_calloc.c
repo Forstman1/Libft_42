@@ -23,7 +23,7 @@ void	*ft_calloc(size_t n, size_t size)
 	i = 0;
 	ptr = (char *)malloc(n * size);
 	if (!ptr)
-		return 0;
+		return (0);
 	b = n * size;
 	while (i < b)
 	{
@@ -32,13 +32,3 @@ void	*ft_calloc(size_t n, size_t size)
 	}
 	return (ptr);
 }
-//int main(void)
-//{
-//    //int *newptr;
-//    char *newptr = (char *)calloc(sizeof(char), 10);
-//    for (size_t i = 0; i < 25; i++)
-//    {
-//        printf("%x\n", newptr[i]);
-//    }    
-//    free(newptr);
-//}

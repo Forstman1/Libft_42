@@ -39,12 +39,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	dst[i] = '\0';
 	return (len);
 }
-//int main()
-//{
-//    char str1[] = "start hello";
-//    char str2[] = "chill";
-//
-//
-//    printf("%zu\n", ft_strlcpy(str1, str2, 5));
-//    printf("%s\n", str1);
-//}

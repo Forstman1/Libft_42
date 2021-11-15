@@ -10,29 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *src)
 {
-	char	*b;
-	char	*c;
-	int		i;
+	int		src_len;
+	char	*dest;
+	char	*a;
 
-	i = 0;
-	b = (char *)s1;
-	while (s1[i])
-		i++;
-	c = (char *)malloc((i + 1) * sizeof(char));
-	if (!c)
-		return 0;
-	i = 0;
-	while (b[i])
-	{
-		c[i] = b[i];
-		i++;
-	}
-	c[i] = '\0';
-	return (c);
+	src_len = ft_strlen(src);
+	a = (char *)src;
+	dest = (char *)malloc(src_len + 1 * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	ft_strcpy(dest, a);
+	return (dest);
 }

@@ -15,15 +15,36 @@
 #include <stdlib.h>
 #include <string.h>
 
-static char *nullcase(void)
+static char	*nullcase(void)
 {
-	char *c;
+	char	*c;
 
 	c = (char *)malloc(sizeof(char));
 	if (!c)
-		return NULL;
+		return (NULL);
 	c[0] = '\0';
 	return (c);
+}
+
+static int	reversedepart(int j, char *set, char *a)
+{
+	int	o;
+
+	o = 0;
+	while (j > 0)
+	{
+		o = 0;
+		while (set[o])
+		{
+			if (set[o] == a[j])
+				break ;
+			o++;
+		}
+		if (set[o] != a[j])
+			break ;
+		j--;
+	}
+	return (j);
 }
 
 static int	depart(int i, char *b, char *a)
@@ -56,7 +77,7 @@ static char	*newarray(int i, int j, char *a)
 	c = NULL;
 	c = (char *)malloc((j - i + 2) * sizeof(char));
 	if (!c)
-		return NULL;
+		return (NULL);
 	while (i <= j)
 	{
 		c[o] = a[i];
@@ -70,7 +91,6 @@ static char	*newarray(int i, int j, char *a)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
-	int		o;
 	int		j;
 	char	*a;
 	char	*b;
@@ -81,23 +101,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	b = (char *)set;
 	i = depart(i, b, a);
 	j = ft_strlen(a);
-	
 	if (!(s1) || !(set))
-		return NULL;
-	while (j > 0)
-	{
-		o = 0;
-		while (set[o])
-		{
-			if (set[o] == a[j])
-				break ;
-			o++;
-		}
-		if (set[o] != a[j])
-			break ;
-		j--;
-	}
+		return (NULL);
+	j = reversedepart(j, b, a);
 	if (i > j)
-		return(nullcase());
+		return (nullcase());
 	return (newarray(i, j, a));
 }

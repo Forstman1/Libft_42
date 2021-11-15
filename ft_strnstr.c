@@ -39,25 +39,3 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (0);
 }
-//int main(void)
-//{
-//    char haystack[30] = "aaabcabcd";
-//    char needle[10] = "aabc";
-//    char *empty = (char*)"";
-//    printf("%s\n", strnstr(haystack, needle, 0));
-//    printf("%s\n", strnstr(haystack, needle, -1));
-//    printf("%s\n", strnstr(haystack, "a", -1));
-//    printf("%s\n", strnstr(haystack, "c", -1));
-//    printf("%s\n", strnstr(empty, "", -1));
-//    printf("%s\n", strnstr(empty, "", 0));
-//    printf("%s\n", strnstr(empty, "coucou", -1));
-//    printf("%s\n", strnstr(haystack, "aaabc", 5));
-//    printf("%s\n", strnstr(empty, "12345", 5));
-//    printf("%s\n", strnstr(haystack, "abcd", 9));
-//    printf("%s\n", strnstr(haystack, "cd", 8));
-//    printf("%s\n", strnstr(haystack, "a", 1) );
-//    printf("%s\n", strnstr("1", "a", 1) );
-//    printf("%s\n", strnstr("22", "b", 2));
-//
-//    return (0);
-//}

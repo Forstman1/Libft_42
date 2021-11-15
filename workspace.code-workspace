@@ -1,4 +1,11 @@
 {
-	"folders": [],
+	"folders": [
+		{
+			"path": "../libftTester"
+		},
+		{
+			"path": "."
+		}
+	],
 	"settings": {}
 }
