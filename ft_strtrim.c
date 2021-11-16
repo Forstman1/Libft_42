@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 static char	*nullcase(void)
 {
@@ -99,10 +96,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 0;
 	a = (char *)s1;
 	b = (char *)set;
-	i = depart(i, b, a);
-	j = ft_strlen(a);
 	if (!(s1) || !(set))
 		return (NULL);
+	i = depart(i, b, a);
+	j = ft_strlen(a);
 	j = reversedepart(j, b, a);
 	if (i > j)
 		return (nullcase());
